@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday My Love</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #a8edea, #5ee7df);
+      color: rgb(144, 16, 39);
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+    h1, h2 {
+      font-size: 2.5em;
+      color: rgb(231, 46, 77);
+      z-index: 2;
+      position: relative;
+      text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99ac, 0 0 30px #fff;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff99ac, 0 0 30px #fff; }
+      to { text-shadow: 0 0 20px #ff99ac, 0 0 30px #ff4d6d, 0 0 40px #fff; }
+    }
+    #startBtn {
+      margin-top: 100px;
+      font-size: 1.5em;
+      padding: 12px 25px;
+      background: #ff4d6d;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+      position: relative;
+      z-index: 2;
+    }
+    #message-box {
+      display: none;
+      margin: 50px auto;
+      width: 70%;
+      max-width: 800px;
+      padding: 20px;
+      font-size: 1.4em;
+      line-height: 1.6em;
+      background: rgba(0,0,0,0.25);
+      border-radius: 15px;
+      min-height: 120px;
+      position: relative;
+      z-index: 2;
+    }
+    #memoriesBtn, #backBtn {
+      display: none;
+      margin: 20px auto;
+      padding: 12px 25px;
+      background: #ff4d6d;
+      color: white;
+      border-radius: 12px;
+      font-size: 1.3em;
+      cursor: pointer;
+      border: none;
+      z-index: 2;
+      position: relative;
+    }
+    #gallery {
+      display: none;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .float {
+      position: absolute;
+      bottom: -50px;
+      font-size: 2em;
+      animation: floatUp 6s linear forwards;
+      z-index: 1;
+      pointer-events: none;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    }
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+    /* Overlay message after confetti */
+    #overlay-message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #ff4d6d;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d, 0 0 30px #ff99ac;
+      z-index: 1000;
+      animation: fadeInOut 5s ease-in-out forwards;
+    }
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💖 Happy Birthday My Love 💖</h1>
+  
+  <button id="startBtn">🎵 Click to Start</button>
+
+  <div id="message-box"></div>
+  <button id="memoriesBtn">💝 View Memories</button>
+
+  <div id="gallery">
+    <h2>💖 Our Beautiful Memories 💖</h2>
+    <div class="gallery">
+      <img src="C:\Users\agarw\birthday-site\assets\photos\photo1.jpg" alt="Memory 1">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo2.jpg" alt="Memory 2">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo3.jpg" alt="Memory 3">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo4.jpg" alt="Memory 4">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo5.jpg" alt="Memory 5">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo6.jpg" alt="Memory 6">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo7.jpg" alt="Memory 7">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo8.jpg" alt="Memory 8">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo9.jpg" alt="Memory 9">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo10.jpg" alt="Memory 10">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo11.jpg" alt="Memory 11">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo12.jpg" alt="Memory 12">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo13.jpg" alt="Memory 13">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo14.jpg" alt="Memory 14">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo15.jpg" alt="Memory 15">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo16.jpg" alt="Memory 16">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo17.jpg" alt="Memory 17">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo18.jpg" alt="Memory 18">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo19.jpg" alt="Memory 19">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo20.jpg" alt="Memory 20">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo21.jpg" alt="Memory 21">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo22.jpg" alt="Memory 22">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo23.jpg" alt="Memory 23">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo24.jpg" alt="Memory 24">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo25.jpg" alt="Memory 25">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo26.jpg" alt="Memory 26">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo27.jpg" alt="Memory 27">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo28.jpg" alt="Memory 28">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo29.jpg" alt="Memory 29">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo30.jpg" alt="Memory 30">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo31.jpg" alt="Memory 31">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo32.jpg" alt="Memory 32">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo33.jpg" alt="Memory 33">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo34.jpg" alt="Memory 34">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo35.jpg" alt="Memory 35">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo36.jpg" alt="Memory 36">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo37.jpg" alt="Memory 37">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo38.jpg" alt="Memory 38">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo39.jpg" alt="Memory 39">
+    <img src="C:\Users\agarw\birthday-site\assets\photos\photo40.jpg" alt="Memory 40">
+    </div>
+    <button id="backBtn">⬅ Back to Messages</button>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="C:/Users/agarw/birthday-site/assets/music.mp3.mpeg" type="audio/mpeg">
+  </audio>
+
+  <canvas id="confetti-canvas"></canvas>
+  <div id="overlay-message">🎉 Happy Birthday Cutie 🎉</div>
+
+  <script>
+    const startBtn = document.getElementById("startBtn");
+    const messageBox = document.getElementById("message-box");
+    const memoriesBtn = document.getElementById("memoriesBtn");
+    const backBtn = document.getElementById("backBtn");
+    const gallery = document.getElementById("gallery");
+    const bgMusic = document.getElementById("bg-music");
+    const overlayMessage = document.getElementById("overlay-message");
+
+    const messages = [
+      "Wishing you the happiest of birthdays my cutie! 😘💖 I love you so much my baby ❤️ I wish that you get all success and happiness in your life and you always keep smiling 😘 your smile makes my day brighter and nights shine. 💖✨ You are my sunshine ☀️⭐",
+      "Tum meri zindagi ki sabse khoobsurat wajah ho ❤️ Mere din ki roshni aur meri raaton ki chain ho 💖 Tum meri duniya ho 😘 aur meri har dua mein tumhara naam hai ❤️", 
+      "You are my world 🌍, my happiness 🌸, and my forever love ❤️😘.",
+      "तेरी हँसी में मुझे मेरा जहाँ मिलता है,तेरी आँखों में हर ख्वाब पूरा सा लगता है, तेरे बिना ये दिल अधूरा सा रहता है, तेरे साथ तो हर दर्द भी छोटा सा लगता है। ❤️😘 तू है तो हर लम्हा मीठा सा लगता है, तेरे बिना सब कुछ अधूरा सा लगता है, तेरी धड़कनों में बसी है मेरी दुनिया,तेरे बिना ये दिल तन्हा सा लगता है। 💖😘  तेरी मोहब्बत मेरी रूह का गीत है,  तेरे होने से ही ये दिल संजीदा है,  हर जन्म तुझे पाने की दुआ करती हूँ,  क्योंकि तू ही मेरी दुनिया, तू ही मेरी ज़िंदगी है। 💕😘  मैं खुद को बहुत खुशनसीब मानती हूँ,  कि मुझे तुम जैसा साथी मिला 💖,   मैं दुआ करती हूँ कि तुम्हें हर सफलता और ख़ुशी मिले ✨ Happy Birthday My Love ❤️😘🎂 "
+    ];
+
+    let msgIndex = 0;
+
+    function createFloatingEmoji() {
+      const emoji = document.createElement("div");
+      emoji.classList.add("float");
+      emoji.innerText = Math.random() > 0.5 ? "🎈" : "💖";
+      emoji.style.left = Math.random() * window.innerWidth + "px";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 6000);
+    }
+    setInterval(createFloatingEmoji, 800);
+
+    function typeMessage(text, callback) {
+      let i = 0;
+      messageBox.innerHTML = "";
+      messageBox.style.display = "block";
+      function typing() {
+        if (i < text.length) {
+          messageBox.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typing, 50);
+        } else {
+          setTimeout(callback, 5000);
+        }
+      }
+      typing();
+    }
+
+    function showNextMessage() {
+      if (msgIndex < messages.length) {
+        typeMessage(messages[msgIndex], () => {
+          msgIndex++;
+          showNextMessage();
+        });
+      } else {
+        memoriesBtn.style.display = "inline-block";
+      }
+    }
+
+    startBtn.addEventListener("click", () => {
+      bgMusic.play();
+      startBtn.style.display = "none";
+      showNextMessage();
+    });
+
+    memoriesBtn.addEventListener("click", () => {
+      messageBox.style.display = "none";
+      memoriesBtn.style.display = "none";
+      gallery.style.display = "block";
+      backBtn.style.display = "inline-block";
+    });
+
+    backBtn.addEventListener("click", () => {
+      gallery.style.display = "none";
+      messageBox.style.display = "block";
+      memoriesBtn.style.display = "inline-block";
+      launchConfetti();
+      showOverlayMessage();
+    });
+
+    function launchConfetti() {
+      const canvas = document.getElementById("confetti-canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let confettis = [];
+      const colors = ["#ff4d6d", "#ffd700", "#5ee7df", "#ff69b4", "#87cefa"];
+
+      for (let i = 0; i < 150; i++) {
+        confettis.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height - canvas.height,
+          r: Math.random() * 6 + 4,
+          d: Math.random() * 150 + 50,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          tilt: Math.random() * 10 - 10,
+        });
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        confettis.forEach(c => {
+          ctx.beginPath();
+          ctx.fillStyle = c.color;
+          ctx.fillRect(c.x, c.y, c.r, c.r * 2);
+        });
+        update();
+      }
+
+      function update() {
+        confettis.forEach(c => {
+          c.y += Math.cos(c.d) + 1 + c.r / 2;
+          c.x += Math.sin(c.d);
+          if (c.y > canvas.height) {
+            c.y = -10;
+            c.x = Math.random() * canvas.width;
+          }
+        });
+      }
+
+      let interval = setInterval(draw, 20);
+      setTimeout(() => {
+        clearInterval(interval);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }, 5000);
+    }
+
+    function showOverlayMessage() {
+      overlayMessage.style.display = "block";
+      setTimeout(() => {
+        overlayMessage.style.display = "none";
+      }, 5000);
+    }
+  </script>
+</body>
+</html>
